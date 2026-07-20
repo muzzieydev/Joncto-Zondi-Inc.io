@@ -1,0 +1,1915 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J&Z Inc. Attorneys — Joncto &amp; Zondi Incorporated</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#0E1326;
+    --ink-2:#1A2140;
+    --ink-3:#252D52;
+    --stone:#EFEAE0;
+    --stone-2:#E3DCCB;
+    --brass:#B08D4F;
+    --brass-light:#27293f;
+    --slate:#4C5D80;
+    --text-dark:#1B2033;
+    --text-light:#F3EFE6;
+    --text-muted-d:#6E6A5D;
+    --text-muted-l:#98A0BC;
+    --line-l: rgba(27,32,51,0.12);
+    --line-d: rgba(243,239,230,0.14);
+    --radius: 2px;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--stone);
+    color:var(--text-dark);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  a{color:inherit; text-decoration:none;}
+  ul{list-style:none;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    color:var(--brass);
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:500;
+  }
+  .eyebrow::before{
+    content:"";
+    width:18px;
+    height:1px;
+    background:var(--brass);
+    display:inline-block;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    line-height:1.08;
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  /* ---------- Diamond mark ---------- */
+  .mark{ display:block; }
+  .mark path, .mark line{
+    fill:none;
+    stroke:currentColor;
+    stroke-width:1.4;
+  }
+
+  /* ---------- NAV ---------- */
+/* ===========================
+   FLOATING NAVIGATION
+=========================== */
+
+header{
+    position:fixed;
+    top:20px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(94%,1250px);
+    z-index:9999;
+    transition:.4s ease;
+}
+
+header .wrap{
+
+    height:82px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:0 30px;
+
+    border-radius:60px;
+
+    background:rgba(12,18,33,.70);
+
+    backdrop-filter:blur(20px);
+
+    -webkit-backdrop-filter:blur(20px);
+
+    border:1px solid rgba(176,141,79,.20);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.35);
+
+}
+
+header.solid{
+
+    top:12px;
+
+}
+
+.logo{
+
+    height:65px;
+
+    transition:.4s;
+
+}
+
+header.solid .logo{
+
+    height:55px;
+
+}
+nav{
+    display:flex;
+    align-items:center;
+}
+
+nav ul{
+    display:flex;
+    align-items:center;
+    gap:38px;
+}
+nav a{
+
+position:relative;
+
+font-size:14px;
+
+font-weight:500;
+
+color:#d7dde8;
+
+transition:.3s;
+
+padding:8px 0;
+
+}
+
+nav a:hover{
+
+color:#ffffff;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+
+bottom:-5px;
+
+width:0;
+
+height:2px;
+
+background:#B08D4F;
+
+transition:.35s;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+.nav-cta .btn{
+
+padding:14px 24px;
+
+border-radius:40px;
+
+background:#B08D4F;
+
+color:#0B1020;
+
+font-weight:600;
+
+border:none;
+
+transition:.35s;
+
+}
+
+.nav-cta .btn:hover{
+
+transform:translateY(-3px);
+
+box-shadow:0 15px 30px rgba(176,141,79,.35);
+
+}
+
+.hamburger{
+
+display:none;
+
+width:48px;
+
+height:48px;
+
+border-radius:50%;
+
+background:rgba(255,255,255,.08);
+
+border:none;
+
+cursor:pointer;
+
+align-items:center;
+
+justify-content:center;
+
+position:relative;
+
+}
+
+.hamburger span{
+
+position:absolute;
+
+width:22px;
+
+height:2px;
+
+background:#fff;
+
+transition:.4s;
+
+}
+
+.hamburger span:nth-child(1){
+
+transform:translateY(-7px);
+
+}
+
+.hamburger span:nth-child(2){
+
+}
+
+.hamburger span:nth-child(3){
+
+transform:translateY(7px);
+
+}
+
+.hamburger.active span:nth-child(1){
+    transform:translateY(0) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2){
+    opacity:0;
+}
+
+.hamburger.active span:nth-child(3){
+    transform:translateY(0) rotate(-45deg);
+}
+@media(max-width:980px){
+
+nav{
+    position:absolute;
+    top:95px;
+    left:0;
+    width:100%;
+    background:#101726;
+    border-radius:20px;
+    padding:20px;
+    display:none;
+}
+
+nav.active{
+    display:block;
+}
+
+nav ul{
+    flex-direction:column;
+    gap:20px;
+}
+
+}
+/* ===========================
+   HERO
+=========================== */
+.hero{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+    color:#fff;
+
+    background:
+        linear-gradient(
+            rgba(8,12,12,.20),
+            rgba(8,12,12,.20)
+        ),
+        url("background.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+.hero-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+    radial-gradient(circle at top right,
+
+    rgba(176,141,79,.18),
+
+    transparent 40%);
+
+}
+
+.hero-grid{
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:60% 30%;
+
+    width:100%;
+
+}
+
+.hero-content{
+
+    max-width:720px;
+
+}
+
+.hero-label{
+
+    display:inline-block;
+
+    color:#B08D4F;
+
+    font-family:"IBM Plex Mono";
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:25px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(60px,7vw,96px);
+
+    line-height:0.95;
+
+    margin-bottom:35px;
+
+}
+
+.hero h1 span{
+
+    color:#B08D4F;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    color:#C5CBD8;
+
+    max-width:620px;
+
+    margin-bottom:45px;
+
+    line-height:1.8;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:18px;
+
+    margin-bottom:70px;
+
+}
+
+.hero-stats{
+
+    display:flex;
+
+    gap:60px;
+
+}
+
+.hero-stats div{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.hero-stats strong{
+
+    font-size:34px;
+
+    color:#B08D4F;
+
+    font-family:"Fraunces";
+
+}
+
+.hero-stats span{
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:#9AA5BD;
+
+}
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    color:white;
+
+    letter-spacing:3px;
+
+    font-size:11px;
+
+    text-transform:uppercase;
+
+}
+
+.scroll-indicator::after{
+
+    content:"";
+
+    display:block;
+
+    width:1px;
+
+    height:45px;
+
+    margin:12px auto 0;
+
+    background:#B08D4F;
+
+    animation:scroll 2s infinite;
+
+}
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px 30px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.35s;
+    border:1px solid transparent;
+}
+
+.btn.filled{
+    background:#B08D4F;
+    color:#0E1326;
+}
+
+.btn.filled:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(176,141,79,.35);
+}
+
+.btn.dark{
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
+    background:transparent;
+}
+
+.btn.dark:hover{
+    background:#fff;
+    color:#0E1326;
+}
+
+@keyframes scroll{
+
+    0%{
+
+        opacity:0;
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:translateY(10px);
+
+    }
+
+}
+
+  /* ---------- SECTION generic ---------- */
+  section{ padding:120px 0; position:relative; }
+  .section-head{ margin-bottom:56px; max-width:640px; }
+  .section-head h2{ font-size:clamp(30px,3.4vw,46px); margin-top:16px; }
+  .section-head p{ color:var(--text-muted-d); margin-top:16px; font-size:16px; max-width:560px;}
+
+  /* ---------- ABOUT ---------- */
+  .about{ background:var(--stone); }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.85fr 1.15fr;
+    gap:70px;
+    align-items:start;
+  }
+  .facade{
+    aspect-ratio:3/4;
+    background-image:linear-gradient(160deg, rgba(14,19,38,0.55), rgba(14,19,38,0.15) 55%), url('assets/facade-building.jpg');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .facade .tag{
+    position:absolute; bottom:22px; left:22px;
+    color:var(--text-light);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    background:rgba(14,19,38,0.55);
+    padding:8px 12px;
+    border-left:2px solid var(--brass);
+  }
+  .about-copy p{ margin-bottom:18px; color:#3B4051; max-width:560px; }
+  .pillars{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-top:40px;
+  }
+  .pillar{
+    border-left:2px solid var(--brass);
+    padding:6px 0 6px 20px;
+  }
+  .pillar h4{ font-size:17px; margin-bottom:8px; }
+  .pillar p{ font-size:14px; color:var(--text-muted-d); }
+
+  /* ---------- SERVICES ---------- */
+  .services{ background:var(--ink); color:var(--text-light); }
+  .services .section-head p{ color:var(--text-muted-l); }
+  .cluster-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:1px;
+    background:var(--line-d);
+    border:1px solid var(--line-d);
+  }
+  .cluster{
+    background:var(--ink);
+    padding:34px 30px;
+    position:relative;
+    clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
+    transition: background .3s ease;
+  }
+  .cluster:hover{ background:var(--ink-2); }
+  .cluster .code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:0.1em;
+    color:var(--brass-light);
+    display:block;
+    margin-bottom:16px;
+  }
+  .cluster h3{
+    font-size:20px;
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .cluster ul li{
+    font-size:13.5px;
+    color:var(--text-muted-l);
+    padding:6px 0;
+    border-top:1px solid var(--line-d);
+  }
+  .cluster ul li:first-child{ border-top:none; }
+
+
+  /* ---------- LEADERSHIP ---------- */
+  .leadership{ background:var(--stone); }
+  .lead-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:2px;
+    background:var(--line-l);
+    border:1px solid var(--line-l);
+  }
+  .lead-card{
+    background:var(--stone);
+    padding:44px;
+  }
+  .lead-avatar{
+    width:112px; height:112px;
+    border:1px solid var(--brass);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Fraunces', serif;
+    font-size:20px;
+    color:var(--brass);
+    margin-bottom:22px;
+    overflow:hidden;
+    background-size:cover;
+    background-position:center top;
+  }
+  .lead-avatar img{ width:100%; height:100%; object-fit:cover; }
+  .lead-card h3{ font-size:24px; margin-bottom:4px; }
+  .lead-role{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--brass);
+    margin-bottom:18px;
+    display:block;
+  }
+  .lead-creds{ margin-bottom:20px; }
+  .lead-creds li{ font-size:14px; color:var(--text-muted-d); padding:3px 0; }
+  .lead-contact{ display:flex; flex-direction:column; gap:6px; }
+  .lead-contact a{
+    font-size:13.5px;
+    color:var(--text-dark);
+    border-bottom:1px solid var(--line-l);
+    width:fit-content;
+    padding-bottom:1px;
+  }
+  .lead-contact a:hover{ border-color:var(--brass); color:var(--brass); }
+
+ /*=========================
+  TEAM DIRECTORY
+==========================*/
+
+.team{
+    background:var(--ink-2);
+    color:var(--text-light);
+}
+
+.team .section-head{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 60px;
+}
+
+.team .section-head p{
+    color:var(--text-muted-l);
+}
+
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:35px;
+}
+
+.team-card{
+    background:#fff;
+    color:var(--text-dark);
+    border-radius:18px;
+    overflow:hidden;
+    transition:.4s;
+    box-shadow:0 20px 45px rgba(0,0,0,.18);
+}
+
+.team-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 30px 60px rgba(0,0,0,.25);
+}
+
+.team-photo{
+    height:300px;
+    overflow:hidden;
+}
+
+.team-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+}
+
+.team-card:hover .team-photo img{
+    transform:scale(1.06);
+}
+
+.team-info{
+    padding:28px;
+}
+
+.team-info h3{
+    font-size:24px;
+    margin-bottom:6px;
+}
+
+.team-role{
+    color:var(--brass);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:20px;
+}
+
+.team-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-bottom:22px;
+}
+
+.team-tags span{
+    background:#f4f1ea;
+    color:#444;
+    padding:7px 12px;
+    border-radius:30px;
+    font-size:12px;
+}
+
+.expand-btn{
+    width:100%;
+    background:none;
+    border:none;
+    color:var(--brass);
+    font-weight:600;
+    cursor:pointer;
+    padding:14px 0;
+    border-top:1px solid #eee;
+}
+
+.team-details{
+    max-height:0;
+    overflow:hidden;
+    transition:.45s;
+}
+
+.team-card.active .team-details{
+    max-height:500px;
+}
+
+.team-details-content{
+    padding:20px 0 0;
+}
+
+.team-details ul{
+    margin-bottom:20px;
+}
+
+.team-details li{
+    margin-bottom:10px;
+}
+
+.team-links{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.team-links a{
+    color:var(--ink);
+    font-size:14px;
+}
+
+.team-links a:hover{
+    color:var(--brass);
+}
+
+/* Tablets */
+@media (max-width:1000px){
+
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:25px;
+    }
+
+}
+
+/* Phones */
+@media (max-width:600px){
+
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:18px;
+    }
+
+    .team-photo{
+        height:180px;
+    }
+
+    .team-info{
+        padding:18px;
+    }
+
+    .team-info h3{
+        font-size:18px;
+        line-height:1.2;
+    }
+
+    .team-role{
+        font-size:11px;
+        letter-spacing:1px;
+    }
+
+    .team-tags{
+        gap:6px;
+    }
+
+    .team-tags span{
+        font-size:10px;
+        padding:5px 8px;
+    }
+
+    .expand-btn{
+        font-size:13px;
+        padding:12px 0;
+    }
+
+}
+
+  /* ---------- TICKER ---------- */
+  .ticker{
+    background:var(--brass);
+    color:var(--ink);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:11px 0;
+  }
+  .ticker-track{
+    display:inline-flex;
+    align-items:center;
+    animation: ticker 34s linear infinite;
+    will-change:transform;
+  }
+  .ticker:hover .ticker-track{ animation-play-state:paused; }
+  .ticker-track span{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    letter-spacing:0.04em;
+    padding:0 26px;
+    position:relative;
+  }
+  .ticker-track span::after{
+    content:"◆";
+    position:absolute;
+    right:0;
+    font-size:8px;
+    top:50%;
+    transform:translateY(-50%);
+    opacity:0.55;
+  }
+  @keyframes ticker{
+    from{ transform:translateX(0); }
+    to{ transform:translateX(-50%); }
+  }
+
+/*=========================
+    FAQ
+=========================*/
+
+.faq{
+    max-width:900px;
+    margin:auto;
+}
+
+.faq-item{
+    background:#fff;
+    margin-bottom:18px;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.faq-question{
+    width:100%;
+    background:none;
+    border:none;
+    cursor:pointer;
+
+    padding:25px 30px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    font-size:18px;
+    font-weight:600;
+    color:var(--ink);
+
+    transition:.3s;
+}
+
+.faq-question:hover{
+    background:#f8f6f1;
+}
+
+.faq-question span{
+    font-size:28px;
+    color:var(--brass);
+    transition:.35s;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height .4s ease;
+}
+
+.faq-answer p{
+    padding:0 30px 30px;
+    color:#555;
+    line-height:1.8;
+}
+
+.faq-item.active .faq-answer{
+    max-height:250px;
+}
+
+.faq-item.active .faq-question span{
+    transform:rotate(45deg);
+}
+
+  /* ---------- CONTACT ---------- */
+  .contact{ background:var(--stone); }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    gap:2px;
+    background:var(--line-l);
+    border:1px solid var(--line-l);
+  }
+  .contact-grid .cta-block{ grid-column:1 / -1; flex-direction:row; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+  .contact-grid .cta-block .cta-text{ max-width:420px; }
+  .contact-grid .cta-block .cta-links{ display:flex; gap:14px; flex-wrap:wrap; }
+  .office{
+    background:var(--stone);
+    padding:40px;
+  }
+  .office .code{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--brass);
+    letter-spacing:0.08em;
+    margin-bottom:14px;
+    display:block;
+  }
+  .office h3{ font-size:21px; margin-bottom:14px; }
+  .office p{ font-size:14.5px; color:var(--text-muted-d); line-height:1.7; }
+  .office .divider{ height:1px; background:var(--line-l); margin:18px 0; }
+  .office a{ font-size:14.5px; display:block; margin-top:4px; color:var(--text-dark); }
+  .office a:hover{ color:var(--brass); }
+  .cta-block{
+    background:var(--ink);
+    color:var(--text-light);
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .cta-block h3{ font-size:22px; margin-bottom:16px; }
+  .cta-block p{ color:var(--text-muted-l); font-size:14px; margin-bottom:24px; }
+  .cta-block .btn.dark{ border-color:var(--line-d); color:var(--text-light); }
+  .cta-block .btn.dark:hover{ background:var(--text-light); color:var(--ink); border-color:var(--text-light); }
+  .contact-grid .cta-block h3{ margin-bottom:8px; }
+  .contact-grid .cta-block p{ margin-bottom:0; }
+
+  footer{
+    background:var(--ink);
+    color:var(--text-muted-l);
+    padding:36px 0;
+    border-top:1px solid var(--line-d);
+  }
+  footer .wrap{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12.5px;
+  }
+  footer .fbrand{ display:flex; align-items:center; gap:10px; color:var( --ink-2); }
+  footer .mark{ width:20px; height:20px; color:var(--brass); }
+
+  .reveal{ opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+.footer-logo{
+    height:38px;
+    width:auto;
+}
+  @media (max-width:980px){
+    nav, .nav-cta .btn.dark{ display:none; }
+    .hamburger{ display:flex; }
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero-emblem{ order:-1; max-width:220px; margin:0 auto 20px; }
+    .facts .wrap{ grid-template-columns:1fr 1fr; }
+    .facts .fact:nth-child(3){ border-left:none; }
+    .about-grid{ grid-template-columns:1fr; }
+    .pillars{ grid-template-columns:1fr; }
+    .cluster-grid{ grid-template-columns:1fr 1fr; }
+    .spotlight{ grid-template-columns:1fr; }
+    .spotlight-panel{ min-height:260px; clip-path:none; }
+    .lead-grid{ grid-template-columns:1fr; }
+    .team-row{ grid-template-columns:1fr; gap:6px; }
+    .contact-grid{ grid-template-columns:1fr; }
+    .contact-grid .cta-block{ flex-direction:column; align-items:flex-start; }
+    .article-grid{ grid-template-columns:1fr 1fr; }
+  }
+  @media (max-width:560px){
+    .wrap{ padding:0 20px; }
+    section{ padding:80px 0; }
+    .cluster-grid{ grid-template-columns:1fr; }
+    .facts .wrap{ grid-template-columns:1fr 1fr; }
+    .article-grid{ grid-template-columns:1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation:none !important; transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap">
+<a href="#top" class="brand">
+    <img src="logo.png" alt="J&Z Inc. Attorneys Logo" class="logo">
+   
+</a>
+    <nav>
+      <ul>
+        <li><a href="#about">Origins</a></li>
+        <li><a href="#services">Practice</a></li>
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#insights">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn" href="tel:0106342556">010 634 2556</a>
+    </div>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+
+ <!-- HERO -->
+<section class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="wrap hero-grid">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                J&Z INC. ATTORNEYS
+            </span>
+
+            <h1>
+                Legal Excellence
+                <br>
+                Built For
+                <span>South Africa.</span>
+            </h1>
+
+            <p>
+                Strategic legal counsel for businesses,
+                institutions and individuals navigating
+                today's most important legal decisions.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#contact" class="btn filled">
+                    Schedule Consultation
+                </a>
+
+                <a href="#services" class="btn dark">
+                    Explore Expertise
+                </a>
+
+            </div>
+
+            <div class="hero-stats">
+
+                <div>
+                    <strong>2022</strong>
+                    <span>Founded</span>
+                </div>
+
+                <div>
+                    <strong>17+</strong>
+                    <span>Practice Areas</span>
+                </div>
+
+                <div>
+                    <strong>3</strong>
+                    <span>Offices</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="scroll-indicator">
+        Scroll
+    </div>
+
+</section>
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span>Now open — our Newcastle, KwaZulu-Natal office</span>
+      <span>Draft Mineral Resources Bill: what it means for junior miners</span>
+      <span>RAF claims — know the two-year prescription period</span>
+      <span>JBCC extension-of-time claims: where disputes really start</span>
+      <span>Estate planning isn't just for the wealthy</span>
+      <span>Now open — our Newcastle, KwaZulu-Natal office</span>
+      <span>Draft Mineral Resources Bill: what it means for junior miners</span>
+      <span>RAF claims — know the two-year prescription period</span>
+      <span>JBCC extension-of-time claims: where disputes really start</span>
+      <span>Estate planning isn't just for the wealthy</span>
+    </div>
+  </div>
+<!-- TEAM -->
+<section class="team" id="team">
+
+    <div class="wrap">
+
+        <div class="section-head reveal">
+            <p class="eyebrow">The Wider Team</p>
+            <h2>Meet Our Legal Professionals.</h2>
+            <p>
+                A multidisciplinary legal team dedicated to delivering strategic,
+                practical and results-driven legal solutions.
+            </p>
+        </div>
+
+        <div class="team-grid reveal">
+
+            <!-- BHEKI -->
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/bheki.jpg" alt="Bhekizulu Zondi">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Bhekizulu (Bheki) Zondi</h3>
+
+                    <div class="team-role">
+                        Practice Manager • Attorney
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Corporate</span>
+                        <span>Litigation</span>
+                        <span>Criminal</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+                                <li>Real Estate Law</li>
+                                <li>Motor Vehicle Accident Claims</li>
+                                <li>Corporate & Commercial Law</li>
+                                <li>Employment Law</li>
+                                <li>Criminal Law</li>
+                                <li>Litigation</li>
+                                <li>Estate Planning</li>
+                                <li>Supply Chain Management</li>
+                                <li>Medical Negligence</li>
+                                <li>Contract & Company Law</li>
+                                <li>Administrative Law</li>
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- SANELI -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/saneli.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Sanelisiwe (Saneli) Ngcobo</h3>
+
+                    <div class="team-role">
+                        Conveyancing & Notary Public • Attorney
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Conveyancing</span>
+                        <span>Notary</span>
+                        <span>Estates</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Conveyancing</li>
+
+                                <li>Notarial Practice</li>
+
+                                <li>Estate Planning</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- KEKE -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/keke.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Eketsang (Keke) Diaho</h3>
+
+                    <div class="team-role">
+                        Mining & Specialised Crime Attorney
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Mining</span>
+                        <span>Corporate</span>
+                        <span>Copyright</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Mining Law</li>
+
+                                <li>Copyright Law</li>
+
+                                <li>Corporate & Commercial</li>
+
+                                <li>Medical Negligence</li>
+
+                                <li>Contract & Company Law</li>
+
+                                <li>Administrative Law</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- NTANDO -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/ntando.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Ntando Kali</h3>
+
+                    <div class="team-role">
+                        Criminal Law • Advocate
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Criminal</span>
+                        <span>Commercial Crime</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Criminal Law</li>
+
+                                <li>Unlawful Arrest</li>
+
+                                <li>Commercial Crime</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- KABELO -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/kabelo.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Kabelo Rampubane</h3>
+
+                    <div class="team-role">
+                        Legal Administrator
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Administration</span>
+                        <span>Operations</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Firm Operations</li>
+
+                                <li>Practice Administration</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MAPULA -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/mapula.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Mapula Ramoshaba</h3>
+
+                    <div class="team-role">
+                        Paralegal
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Paralegal</span>
+                        <span>Legal Research</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Awaiting Registration of Articles of Clerkship</li>
+
+                                <li>Email: mapula@jandzattorneys.co.za</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- HLOLANI -->
+
+            <div class="team-card">
+
+                <div class="team-photo">
+                    <img src="assets/hlolani.jpg" alt="">
+                </div>
+
+                <div class="team-info">
+
+                    <h3>Hlolani Zondi</h3>
+
+                    <div class="team-role">
+                        Paralegal
+                    </div>
+
+                    <div class="team-tags">
+                        <span>Paralegal</span>
+                        <span>Client Support</span>
+                    </div>
+
+                    <button class="expand-btn">
+                        View Expertise
+                    </button>
+
+                    <div class="team-details">
+
+                        <div class="team-details-content">
+
+                            <ul>
+
+                                <li>Case Preparation</li>
+
+                                <li>Client Support</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Our practice</p>
+        <h2>Seventeen matters, six facets.</h2>
+        <p>Every file we open falls into one of six practice clusters — each cut to the same standard of care.</p>
+      </div>
+      <div class="cluster-grid reveal">
+        <div class="cluster">
+          <span class="code">FILE / CC</span>
+          <h3>Corporate &amp; Regulatory</h3>
+          <ul>
+            <li>Corporate &amp; Commercial Law</li>
+            <li>Contract &amp; Company Law</li>
+            <li>Constitutional Law</li>
+            <li>Administrative Law</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <span class="code">FILE / PB</span>
+          <h3>Property, Construction &amp; SCM</h3>
+          <ul>
+            <li>Real Estate Law</li>
+            <li>Construction Law (JBCC, GCC, FIDIC, NEC)</li>
+            <li>Supply Chain Management disputes</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <span class="code">FILE / MN</span>
+          <h3>Mining &amp; Resources</h3>
+          <ul>
+            <li>Mining Law</li>
+            <li>Exploration &amp; extraction rights</li>
+            <li>Regulatory compliance</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <span class="code">FILE / PP</span>
+          <h3>People &amp; Family</h3>
+          <ul>
+            <li>Employment Law</li>
+            <li>Family Law</li>
+            <li>Criminal Law</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <span class="code">FILE / DR</span>
+          <h3>Disputes &amp; Recovery</h3>
+          <ul>
+            <li>Litigation &amp; Dispute Resolution</li>
+            <li>Debt Collection &amp; Collection Services</li>
+          </ul>
+        </div>
+        <div class="cluster">
+          <span class="code">FILE / PE</span>
+          <h3>Personal &amp; Estate</h3>
+          <ul>
+            <li>Estate Planning &amp; Administration</li>
+            <li>Medical Negligence</li>
+            <li>Motor Vehicle Accident (RAF) claims</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- LEADERSHIP -->
+  <section class="leadership" id="leadership">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Leadership</p>
+        <h2>The founders.</h2>
+      </div>
+      <div class="lead-grid reveal">
+        <div class="lead-card">
+          <div class="lead-avatar"><img src="assets/khonzi-zondi.jpg" alt="Khonzinkosi Zondi"></div>
+          <h3>Khonzinkosi (Khonzi) Zondi</h3>
+          <span class="lead-role">Managing Director &amp; Attorney · She/Her</span>
+          <ul class="lead-creds">
+            <li>BCom Law — IIE Varsity College, Sandton</li>
+            <li>LLB — University of the Witwatersrand</li>
+          </ul>
+          <div class="lead-contact">
+            <a href="mailto:khonzi@jandzattorneys.co.za">khonzi@jandzattorneys.co.za</a>
+            <a href="tel:0720872923">072 087 2923</a>
+            <a href="tel:0106342556">010 634 2556</a>
+          </div>
+        </div>
+        <div class="lead-card">
+          <div class="lead-avatar"><img src="assets/sello-joncto.jpg" alt="Sello Joncto"></div>
+          <h3>Sello (Skhalo) Joncto</h3>
+          <span class="lead-role">Director &amp; Attorney · He/Him</span>
+          <ul class="lead-creds">
+            <li>BA General — University of the Witwatersrand</li>
+            <li>LLB — University of the Witwatersrand</li>
+          </ul>
+          <div class="lead-contact">
+            <a href="mailto:sello@jandzattorneys.co.za">sello@jandzattorneys.co.za</a>
+            <a href="tel:0638272192">063 827 2192</a>
+            <a href="tel:0106342556">010 634 2556</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <!-- INSIGHTS -->
+  <section class="insights" id="insights">
+    <div class="wrap">
+      <div class="section-head reveal">
+<p class="eyebrow">Frequently Asked Questions</p>
+<h2>Answers to common legal questions.</h2>
+<p>
+Find quick answers to the questions we receive most often.
+If you need legal advice specific to your matter, contact our attorneys for a consultation.
+</p>
+      </div>
+     <div class="faq reveal">
+
+    <div class="faq-item">
+        <button class="faq-question">
+            How do I book a consultation?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                You can book a consultation by calling
+                <strong>010 634 2556</strong>,
+                emailing us, or visiting any of our offices.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Which areas of law do you specialize in?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                We specialize in Corporate & Commercial Law,
+                Litigation, Criminal Law, Mining Law,
+                Construction Law, Estate Planning,
+                Employment Law, Property Law,
+                Medical Negligence and many more.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Do you handle Road Accident Fund (RAF) claims?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Yes. Our attorneys assist clients with RAF claims,
+                medical negligence matters and motor vehicle accident litigation.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Do you offer conveyancing services?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                Yes. Our Conveyancing and Notarial department
+                handles property transfers, bond registrations,
+                notarial services and estate transfers.
+            </p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">
+            Where are your offices located?
+            <span>+</span>
+        </button>
+
+        <div class="faq-answer">
+            <p>
+                We have offices in
+                Fochville,
+                Rosebank,
+                and Newcastle,
+                serving clients throughout South Africa.
+            </p>
+        </div>
+    </div>
+
+</div>
+    </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Reach us</p>
+        <h2>Two offices. One standard of care.</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="office">
+          <span class="code">OFFICE 01 — MAIN</span>
+          <h3>Fochville, West Rand</h3>
+          <p>7 Ninth Street<br>Fochville, 2515<br>West Rand, Gauteng</p>
+          <div class="divider"></div>
+          <a href="tel:0106342556">010 634 2556</a>
+          <a href="tel:0720872923">072 087 2923</a>
+        </div>
+        <div class="office">
+          <span class="code">OFFICE 02</span>
+          <h3>Rosebank Mall</h3>
+          <p>1st Floor, Craddock Square<br>Rosebank, 2196<br>Gauteng</p>
+          <div class="divider"></div>
+          <a href="tel:0106342556">010 634 2556</a>
+          <a href="tel:0638272192">063 827 2192</a>
+        </div>
+        <div class="office">
+          <span class="code">OFFICE 03</span>
+          <h3>Newcastle, KZN</h3>
+          <p>10 O'Niel Street<br>Newcastle, 2940<br>KwaZulu-Natal</p>
+          <div class="divider"></div>
+          <a href="tel:0106342556">010 634 2556</a>
+        </div>
+        <div class="cta-block">
+          <div class="cta-text">
+            <h3>Speak to the firm</h3>
+            <p>For new matters, general queries or urgent instructions, reach us directly.</p>
+          </div>
+          <div class="cta-links">
+            <a class="btn filled" href="mailto:info@jandzattorneys.co.za">Email the firm</a>
+            <a class="btn dark" href="mailto:khonzi@jandzattorneys.co.za">Email Khonzi</a>
+            <a class="btn dark" href="mailto:sello@jandzattorneys.co.za">Email Sello</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+ <img src="assets/logo.png" alt="J&Z Inc. Attorneys Logo" class="footer-logo">
+    </div>
+    <div>&copy; 2026 J&amp;Z Inc. Attorneys. All rights reserved.</div>
+  </div>
+</footer>
+<!-- Floating Contact -->
+<div class="floating-contact">
+
+    <button class="contact-toggle">
+        ☎
+    </button>
+
+    <div class="contact-menu">
+
+        <a href="https://wa.me/27638272192" target="_blank" class="contact-item whatsapp">
+            <span>💬</span>
+            WhatsApp
+        </a>
+
+        <a href="tel:0106342556" class="contact-item phone">
+            <span>📞</span>
+            Call Us
+        </a>
+
+        <a href="mailto:info@jandzattorneys.co.za" class="contact-item email">
+            <span>✉</span>
+            Email
+        </a>
+
+    </div>
+
+
+<script>
+  const header = document.getElementById('site-header');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('solid', window.scrollY > 40);
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => io.observe(el));
+
+  document.querySelectorAll('nav a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelector(a.getAttribute('href'))?.scrollIntoView({behavior:'smooth'});
+    });
+  });
+const burger = document.querySelector(".hamburger");
+const nav = document.querySelector("nav");
+
+burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    nav.classList.toggle("active");
+});
+
+document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", () => {
+        burger.classList.remove("active");
+        nav.classList.remove("active");
+    });
+});
+document.querySelectorAll(".expand-btn").forEach(btn=>{
+
+btn.addEventListener("click",()=>{
+
+const card=btn.closest(".team-card");
+
+document.querySelectorAll(".team-card").forEach(c=>{
+
+if(c!==card){
+
+c.classList.remove("active");
+
+c.querySelector(".expand-btn").textContent="View Expertise";
+
+}
+
+});
+
+card.classList.toggle("active");
+
+btn.textContent=card.classList.contains("active")
+? "Hide Details"
+: "View Expertise";
+
+});
+
+});
+document.querySelectorAll(".faq-question").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const item = button.parentElement;
+
+        document.querySelectorAll(".faq-item").forEach(faq => {
+
+            if(faq !== item){
+                faq.classList.remove("active");
+            }
+
+        });
+
+        item.classList.toggle("active");
+
+    });
+
+});
+</script>
+
+</body>
+</html>
