@@ -712,12 +712,28 @@ nav ul{
 }
 
 
-.team-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:35px;
+.team-slider{
+    position:relative;
+    overflow:hidden;
 }
 
+.team-grid{
+    display:flex;
+    gap:30px;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    padding:10px 5px 20px;
+    scrollbar-width:none;
+}
+
+.team-grid::-webkit-scrollbar{
+    display:none;
+}
+
+.team-card{
+    flex:0 0 340px;
+    min-width:340px;
+}
 .team-card{
     background:#fff;
     color:var(--text-dark);
@@ -1199,7 +1215,17 @@ nav ul{
                 practical and results-driven legal solutions.
             </p>
         </div>
+       <div class="team-slider">
 
+<button class="slider-btn prev">
+❮
+</button>
+
+<button class="slider-btn next">
+❯
+</button>
+
+<div class="team-grid reveal">
         <div class="team-grid reveal">
 
             <!-- BHEKI -->
@@ -1804,6 +1830,7 @@ If you need legal advice specific to your matter, contact our attorneys for a co
     <div>&copy; 2026 J&amp;Z Inc. Attorneys. All rights reserved.</div>
   </div>
 </footer>
+
 
 
 <script>
