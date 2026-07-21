@@ -589,7 +589,7 @@ nav ul{
     position:relative;
     overflow:hidden;
 
-    background:url("service.png") center/cover no-repeat;
+    background:url("") center/cover no-repeat;
 }
 
 .services::before{
@@ -619,13 +619,13 @@ nav ul{
     border:1px solid var(--line-d);
   }
   .cluster{
-    background:var(--ink);
+    background:var(--stone-2);
     padding:34px 30px;
     position:relative;
     clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%);
     transition: background .3s ease;
   }
-  .cluster:hover{ background:var(--ink-2); }
+  .cluster:hover{ background:var( --stone-2); }
   .cluster .code{
     font-family:'IBM Plex Mono', monospace;
     font-size:11px;
@@ -1511,69 +1511,111 @@ grid-template-columns:1fr;
 }
 
 }
+/* ===========================
+   GLASS FOOTER
+=========================== */
+
 footer{
-    background:var(--ink);
-    color:var(--text-muted-l);
-    padding:40px 0;
-    border-top:1px solid var(--line-d);
+    width:min(98%,1270px);
+    margin:40px auto 20px;
+    padding:22px 35px;
+
+    background:rgba(1,7,10,.10);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid rgba(176,141,79,.15);
+    border-radius:60px;
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.18);
+
+    position:relative;
+    z-index:5;
 }
 
 footer .wrap{
-    display:flex;
-    justify-content:space-between;
+    display:grid;
+    grid-template-columns:1fr auto 1fr;
     align-items:center;
     gap:20px;
-    flex-wrap:wrap;
+}
+
+/* LEFT */
+
+.footer-brand{
+    display:flex;
+    align-items:center;
 }
 
 .footer-logo{
-    height:40px;
+    height:55px;
 }
+
+/* CENTER */
+
+.copyright{
+    text-align:center;
+    color:#1A2140;
+    font-size:14px;
+    font-weight:500;
+    letter-spacing:.3px;
+}
+
+/* RIGHT */
 
 .footer-social{
     display:flex;
-    align-items:center;
+    justify-content:flex-end;
     gap:14px;
 }
 
 .footer-social a{
-    width:42px;
-    height:42px;
+    width:45px;
+    height:45px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
     border:1px solid rgba(176,141,79,.35);
+
     color:#B08D4F;
     font-size:18px;
-    transition:.35s ease;
+
+    transition:.35s;
 }
 
 .footer-social a:hover{
     background:#B08D4F;
     color:#0E1326;
     transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(176,141,79,.35);
+    box-shadow:0 15px 30px rgba(176,141,79,.35);
 }
 
-.copyright{
-    font-size:13px;
-    color:#98A0BC;
-}
+/* MOBILE */
 
 @media(max-width:768px){
 
+footer{
+    border-radius:28px;
+    padding:25px;
+}
+
 footer .wrap{
-    flex-direction:column;
+    grid-template-columns:1fr;
     text-align:center;
 }
 
-.footer-social{
-    order:2;
+.footer-brand{
+    justify-content:center;
 }
 
-.copyright{
-    order:3;
+.footer-social{
+    justify-content:center;
 }
 
 }
@@ -2517,33 +2559,35 @@ If you need legal advice specific to your matter, contact our attorneys for a co
 </div>
 
 </main>
-
 <footer>
-  <div class="wrap">
 
-    <div class="fbrand">
-      <img src="logo.png" alt="J&Z Inc. Attorneys Logo" class="footer-logo">
+    <div class="wrap">
+
+        <!-- LEFT -->
+        <div class="footer-brand">
+            <img src="logo.png" alt="J&Z Inc. Attorneys" class="footer-logo">
+        </div>
+
+        <!-- CENTER -->
+        <div class="copyright">
+            © 2026 J&Z Inc. Attorneys. All Rights Reserved.
+        </div>
+
+        <!-- RIGHT -->
+        <div class="footer-social">
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+
+        </div>
+
     </div>
 
-    <div class="footer-social">
-      <a href="https://facebook.com" target="_blank" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-
-      <a href="https://wa.me/27106342556" target="_blank" aria-label="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-    </div>
-
-    <div class="copyright">
-      &copy; 2026 J&amp;Z Inc. Attorneys. All rights reserved.
-    </div>
-
-  </div>
 </footer>
 
 
@@ -2652,5 +2696,3 @@ prevBtn.addEventListener("click", () => {
 
 </body>
 </html>
-
-      
