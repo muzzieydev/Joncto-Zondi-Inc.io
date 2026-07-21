@@ -8,6 +8,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 <style>
 
   :root{
@@ -93,7 +95,7 @@ header{
     top:20px;
     left:50%;
     transform:translateX(-50%);
-    width:min(94%,1250px);
+    width:min(98%,1270px);
     z-index:9999;
     transition:.4s ease;
 }
@@ -114,11 +116,11 @@ header .wrap{
 
     background:rgba(1,7,10,.1);
 
-    backdrop-filter:blur(30px);
+   backdrop-filter:blur(22px);
 
-    -webkit-backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(100px);
 
-    border:1px solid rgba(176,141,79,.20);
+    border:1px solid rgba(176,141,79,.0);
 
     box-shadow:
     0 20px 50px rgba(0,0,0,.35);
@@ -133,7 +135,7 @@ header.solid{
 
 .logo{
 
-    height:65px;
+    height:70px;
 
     transition:.4s;
 
@@ -141,7 +143,7 @@ header.solid{
 
 header.solid .logo{
 
-    height:55px;
+    height:65px;
 
 }
 nav{
@@ -152,7 +154,7 @@ nav{
 nav ul{
     display:flex;
     align-items:center;
-    gap:38px;
+    gap:20px;
 }
 nav a{
 
@@ -162,7 +164,7 @@ font-size:14px;
 
 font-weight:500;
 
-color:#d7dde8;
+color:#212936;
 
 transition:.3s;
 
@@ -203,22 +205,13 @@ width:100%;
 }
 .nav-cta .btn{
 
-padding:14px 24px;
-
-border-radius:40px;
-
 background:#B08D4F;
 
-color:#0B1020;
+color:#0E1326;
 
-font-weight:600;
-
-border:none;
-
-transition:.35s;
+border-radius:50px;
 
 }
-
 .nav-cta .btn:hover{
 
 transform:translateY(-3px);
@@ -259,7 +252,7 @@ width:22px;
 
 height:2px;
 
-background:#fff;
+background:#001c33;
 
 transition:.4s;
 
@@ -299,7 +292,7 @@ nav{
     top:95px;
     left:0;
     width:100%;
-    background:#101726;
+    background:#cdd3e0;
     border-radius:20px;
     padding:20px;
     display:none;
@@ -320,18 +313,14 @@ nav ul{
 =========================== */
 .hero{
     position:relative;
-    min-height:100vh;
+    min-height:93vh;      /* was 100vh */
     display:flex;
     align-items:center;
     overflow:hidden;
-    color:#fff;
+    color:#151c3b;
 
     background:
-        linear-gradient(
-            rgba(8,12,12,.20),
-            rgba(8,12,12,.20)
-        ),
-        url("Background.png");
+        url("teams-bg.png") center/cover no-repeat;
 
     background-size:cover;
     background-position:center;
@@ -420,13 +409,10 @@ nav ul{
 }
 
 .hero-buttons{
-
     display:flex;
-
     gap:18px;
-
-    margin-bottom:70px;
-
+    margin-top:20px;
+    margin-bottom:0;
 }
 
 .hero-stats{
@@ -526,9 +512,9 @@ nav ul{
 }
 
 .btn.dark{
-    border:1px solid rgba(255,255,255,.25);
+    border:1px solid rgba(255, 255, 255, 0.25);
     color:#fff;
-    background:transparent;
+    background:#0E1326;
 }
 
 .btn.dark:hover{
@@ -596,33 +582,35 @@ nav ul{
   .section-head h2{ font-size:clamp(30px,3.4vw,46px); margin-top:16px; }
   .section-head p{ color:var(--text-muted-d); margin-top:16px; font-size:16px; max-width:560px;}
 
-  /* ---------- ABOUT ---------- */
-  .about{ background:var(--stone); }
-  .about-grid{
-    display:grid;
-    grid-template-columns:0.85fr 1.15fr;
-    gap:70px;
-    align-items:start;
-  }
 
-
-  .about-copy p{ margin-bottom:18px; color:#3B4051; max-width:560px; }
-  .pillars{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:24px;
-    margin-top:40px;
-  }
-  .pillar{
-    border-left:2px solid var(--brass);
-    padding:6px 0 6px 20px;
-  }
-  .pillar h4{ font-size:17px; margin-bottom:8px; }
-  .pillar p{ font-size:14px; color:var(--text-muted-d); }
 
   /* ---------- SERVICES ---------- */
-  .services{ background:var(--ink); color:var(--text-light); }
-  .services .section-head p{ color:var(--text-muted-l); }
+.services{
+    position:relative;
+    overflow:hidden;
+
+    background:url("service.png") center/cover no-repeat;
+}
+
+.services::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+        linear-gradient(
+            rgba(14,19,38,.0),
+            rgba(14,19,38,.0)
+        );
+
+    z-index:0;
+}
+
+.services .wrap{
+    position:relative;
+    z-index:1;
+}
+  .services .section-head p{ color:var( --ink); }
   .cluster-grid{
     display:grid;
     grid-template-columns:repeat(3, 1fr);
@@ -659,55 +647,203 @@ nav ul{
   }
   .cluster ul li:first-child{ border-top:none; }
 
+/*==========================================
+    ABOUT + LEADERSHIP
+==========================================*/
 
-  /* ---------- LEADERSHIP ---------- */
-  .leadership{ background: #684444 lack;; }
-  .lead-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:2px;
-    background:var(--line-l);
-    border:1px solid var(--line-l);
-  }
-  .lead-card{
-    background:var(--stone);
-    padding:44px;
-  }
-  .lead-avatar{
-    width:200px; height:200px;
-    border:1px solid var(--brass);
-    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    display:flex; align-items:center; justify-content:center;
-    font-family:'Fraunces', serif;
-    font-size:20px;
-    color:var(--brass);
-    margin-bottom:22px;
+.about{
+    position:relative;
+    background:url(services.png);
     overflow:hidden;
-    background-size:cover;
-    background-position:center top;
-  }
-  .lead-avatar img{ width:100%; height:100%; object-fit:cover; }
-  .lead-card h3{ font-size:24px; margin-bottom:4px; }
-  .lead-role{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.06em;
-    text-transform:uppercase;
+}
+
+.about::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at top right,
+        rgba(206, 197, 181, 0.5),
+        transparent 45%);
+    pointer-events:none;
+}
+
+.about .wrap{
+    position:relative;
+    z-index:2;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-copy h3{
+    font-size:34px;
+    margin-bottom:25px;
+    color:var(--ink);
+}
+
+.about-copy p{
+    color:#5f6473;
+    margin-bottom:20px;
+    line-height:1.9;
+}
+
+
+/* Mission Vision */
+
+.pillars{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-top:45px;
+}
+
+.pillar{
+    background:#fff;
+    border-radius:18px;
+    padding:28px;
+    box-shadow:0 15px 35px rgba(0,0,0,.06);
+}
+
+.pillar h4{
+    margin-bottom:10px;
     color:var(--brass);
-    margin-bottom:18px;
+}
+
+.pillar p{
+    margin:0;
+    color:#666;
+    line-height:1.7;
+}
+
+/*=========================
+    LEADERSHIP
+=========================*/
+
+.lead-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:35px;
+    margin-top:45px;
+}
+
+.lead-card{
+    background:#fff;
+    border-radius:24px;
+    padding:40px;
+    text-align:center;
+    transition:.35s;
+    box-shadow:0 20px 45px rgba(0,0,0,.08);
+}
+
+.lead-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 35px 70px rgba(0,0,0,.12);
+}
+
+.lead-avatar{
+    width:170px;
+    height:170px;
+    margin:0 auto 25px;
+    border-radius:50%;
+    overflow:hidden;
+    border:5px solid rgba(176,141,79,.18);
+}
+
+.lead-avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.lead-card h3{
+    font-size:30px;
+    margin-bottom:8px;
+}
+
+.lead-role{
     display:block;
-  }
-  .lead-creds{ margin-bottom:20px; }
-  .lead-creds li{ font-size:14px; color:var(--text-muted-d); padding:3px 0; }
-  .lead-contact{ display:flex; flex-direction:column; gap:6px; }
-  .lead-contact a{
-    font-size:13.5px;
-    color:var(--text-dark);
-    border-bottom:1px solid var(--line-l);
-    width:fit-content;
-    padding-bottom:1px;
-  }
-  .lead-contact a:hover{ border-color:var(--brass); color:var(--brass); }
+    color:var(--brass);
+    letter-spacing:2px;
+    text-transform:uppercase;
+    font-size:13px;
+    margin-bottom:25px;
+}
+
+.lead-creds{
+    text-align:left;
+    margin:0 auto 28px;
+    max-width:320px;
+}
+
+.lead-creds li{
+    padding:12px 0;
+    border-bottom:1px solid rgba(0,0,0,.08);
+}
+
+.lead-contact{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+}
+
+.lead-contact a{
+    color:var(--ink);
+    transition:.3s;
+}
+
+.lead-contact a:hover{
+    color:var(--brass);
+}
+
+/*=========================
+    RESPONSIVE
+=========================*/
+
+@media(max-width:980px){
+
+.about-grid{
+    grid-template-columns:1fr;
+}
+
+.facade{
+    height:420px;
+}
+
+.pillars{
+    grid-template-columns:1fr;
+}
+
+.lead-grid{
+    grid-template-columns:1fr;
+}
+
+}
+
+@media(max-width:600px){
+
+.about-copy h3{
+    font-size:28px;
+}
+
+.lead-card{
+    padding:28px;
+}
+
+.lead-avatar{
+    width:140px;
+    height:140px;
+}
+
+.lead-card h3{
+    font-size:24px;
+}
+
+}
 
  /*=========================
   TEAM DIRECTORY
@@ -724,7 +860,7 @@ nav ul{
     content:"";
     position:absolute;
     inset:0;
-
+    background:rgba(214, 218, 226, 0);
 }
 
 .team .wrap{
@@ -876,7 +1012,9 @@ nav ul{
 }
 .team-slider{
     position:relative;
-    overflow:hidden;
+    display:flex;
+    align-items:center;
+    gap:15px;
 }
 
 /* Left & Right Fade Panels */
@@ -1105,23 +1243,15 @@ nav ul{
 .contact-info{
     border-left:1px solid rgba(0,0,0,.08);
 }
-
-@media(max-width:900px){
-
-    .contact-layout{
-        grid-template-columns:1fr;
-    }
-
-    .contact-info{
-        border-left:none;
-        border-top:1px solid rgba(0,0,0,.08);
-    }
-
+.contact-form{
+    display:flex;
+    flex-direction:column;
 }
+
 .form-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:10px;
+    gap:18px;
 }
 
 .contact-form input,
@@ -1129,20 +1259,29 @@ nav ul{
 .contact-form textarea{
 
     width:100%;
+    padding:16px 18px;
 
-    padding:18px;
+    border:1px solid rgba(0,0,0,.12);
 
-    border:1px solid #ddd;
-
-    border-radius:14px;
+    border-radius:12px;
 
     font-size:15px;
 
-    font-family:inherit;
+    background:#fff;
 
-    background:#fafafa;
+    transition:.3s;
 
-    transition:.35s;
+    outline:none;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{
+
+    border-color:#B08D4F;
+
+    box-shadow:0 0 0 4px rgba(176,141,79,.12);
 
 }
 
@@ -1154,25 +1293,62 @@ nav ul{
 
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus{
+.contact-note{
+
+    margin-top:18px;
+
+    font-size:13px;
+
+    color:#666;
+
+}
+.contact-form{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+
+    width:100%;
+    padding:16px 18px;
+
+    border:1px solid rgba(0,0,0,.12);
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    background:#fff;
+
+    transition:.3s;
 
     outline:none;
 
-    border-color:var(--brass);
+}
 
-    background:white;
+.contact-form input:focus,
+.contact-form textarea:focus,
+.contact-form select:focus{
 
-    box-shadow:0 0 0 5px rgba(176,141,79,.15);
+    border-color:#B08D4F;
+
+    box-shadow:0 0 0 4px rgba(176,141,79,.12);
 
 }
 
-.contact-form button{
+.contact-form textarea{
 
-    width:100%;
+    margin:20px 0;
 
-    margin-top:10px;
+    resize:vertical;
 
 }
 
@@ -1180,47 +1356,20 @@ nav ul{
 
     margin-top:18px;
 
-    text-align:center;
+    font-size:13px;
 
     color:#666;
 
-    font-size:14px;
-
 }
-
-.contact-info{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
-
-}
-
 .info-card{
 
-    border:1px solid #eee;
-
-    border-radius:18px;
-
-    padding:10px;
-
-    transition:.35s;
-
-}
-
-.info-card:hover{
-
-    border-color:var(--brass);
-
-    transform:translateY(-4px);
+    margin-bottom:28px;
 
 }
 
 .info-card span{
 
-    font-size:10px;
+    font-size:28px;
 
 }
 
@@ -1234,59 +1383,116 @@ nav ul{
 
 .info-card a{
 
-    color:#222;
+    color:#1A2140;
 
 }
 
-.social-row{
+.info-card p{
 
-    display:flex;
-
-    gap:10px;
-
-    flex-wrap:wrap;
+    color:#555;
 
 }
 
-.social-row a{
+/* ==========================
+   MAP
+========================== */
 
-    padding:10px 18px;
-
-    border-radius:50px;
-
-    border:1px solid var(--brass);
-
-    transition:.35s;
-
+.contact-info h3{
+    font-size:30px;
+    margin-bottom:10px;
+    color:var(--ink);
 }
 
-.social-row a:hover{
-
-    background:var(--brass);
-
-    color:white;
-
+.contact-info p{
+    color:#666;
+    margin-bottom:25px;
+    line-height:1.7;
 }
 
 .map-box{
-
-    margin-top:10px;
-
-    overflow:hidden;
-
+    width:100%;
+    height:500px;
     border-radius:18px;
-
-    height:260px;
-
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.08);
 }
 
 .map-box iframe{
-
     width:100%;
-
     height:100%;
-
     border:0;
+    display:block;
+}
+
+
+/* ==========================================
+   CONTACT SECTION - MOBILE FIX
+========================================== */
+@media (max-width:768px){
+
+    .contact-section{
+        padding:60px 0;
+    }
+
+    .contact-wrapper{
+        border-radius:18px;
+        overflow:hidden;
+    }
+
+    .contact-layout{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .contact-card,
+    .contact-info{
+        padding:25px 20px;
+    }
+
+    .contact-info{
+        border-left:none;
+        border-top:1px solid rgba(0,0,0,.08);
+    }
+
+    /* Form */
+    .form-grid{
+        display:grid;
+        grid-template-columns:1fr;
+        gap:16px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea{
+        width:100%;
+        padding:16px;
+        font-size:16px;
+        border-radius:12px;
+    }
+
+    .contact-form textarea{
+        margin:16px 0;
+        min-height:160px;
+    }
+
+    .contact-form button{
+        width:100%;
+        padding:18px;
+    }
+
+    .contact-note{
+        font-size:13px;
+        line-height:1.6;
+    }
+
+
+    /* Map */
+
+    .map-box{
+        height:220px;
+        margin-top:20px;
+        border-radius:14px;
+    }
 
 }
 
@@ -1333,10 +1539,11 @@ header{
 }
 
 header .wrap{
-    height:72px;
-    padding:0 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:5px;
 }
-
 .logo{
     height:50px;
 }
@@ -1346,7 +1553,7 @@ header .wrap{
 }
 
 .nav-cta{
-    display:none;
+    display:block;
 }
 
 nav{
@@ -1483,12 +1690,6 @@ footer .wrap{
                 <span>South Africa.</span>
             </h1>
 
-            <p>
-                Strategic legal counsel for businesses,
-                institutions and individuals navigating
-                today's most important legal decisions.
-            </p>
-
             <div class="hero-buttons">
 
                 <a href="#contact" class="btn filled">
@@ -1501,33 +1702,9 @@ footer .wrap{
 
             </div>
 
-            <div class="hero-stats">
-
-                <div>
-                    <strong>2022</strong>
-                    <span>Founded</span>
-                </div>
-
-                <div>
-                    <strong>17+</strong>
-                    <span>Practice Areas</span>
-                </div>
-
-                <div>
-                    <strong>3</strong>
-                    <span>Offices</span>
-                </div>
-
-            </div>
-
+    </div>
         </div>
-
     </div>
-
-    <div class="scroll-indicator">
-        Scroll
-    </div>
-
 </section>
   <!-- TICKER -->
   <div class="ticker">
@@ -1984,223 +2161,119 @@ footer .wrap{
 
 <div class="wrap">
 
-<div class="section-head reveal">
+    <!-- =========================
+         ABOUT
+    ========================== -->
 
-<p class="eyebrow">
-About J&Z Inc.
-</p>
+    <div class="section-head reveal">
 
-<h2>
-Building Trust Through Legal Excellence.
-</h2>
+        <p class="eyebrow">About J&Z Inc.</p>
 
-<p>
-J&Z Inc. Attorneys is a modern South African law firm committed to
-providing strategic legal solutions for businesses, institutions and
-individuals. Our approach combines legal excellence with practical
-commercial thinking, ensuring every client receives advice that is
-clear, effective and results-driven.
-</p>
+    </div>
 
-</div>
+    <div class="about-grid reveal">
 
+            <div class="pillars">
 
-<div class="about-grid reveal">
+                <div class="pillar">
+                    <h4>Our Mission</h4>
+                    <p>
+                        To deliver exceptional legal services with integrity,
+                        professionalism and unwavering commitment to every client.
+                    </p>
+                </div>
 
-<div class="about-copy">
+                <div class="pillar">
+                    <h4>Our Vision</h4>
+                    <p>
+                        To become one of South Africa's most respected and
+                        innovative legal practices.
+                    </p>
+                </div>
 
-<h3 style="margin-bottom:25px;font-size:32px;">
-Our Story
-</h3>
+                <div class="pillar">
+                    <h4>Integrity</h4>
+                    <p>
+                        Every instruction is handled ethically,
+                        confidentially and transparently.
+                    </p>
+                </div>
 
-<p>
-Established in 2022, Joncto & Zondi Incorporated Attorneys was founded
-with a vision of creating a law firm built on integrity, professionalism
-and long-term client relationships.
-</p>
+                <div class="pillar">
+                    <h4>Excellence</h4>
+                    <p>
+                        We pursue the highest standards of legal expertise,
+                        professionalism and client service.
+                    </p>
+                </div>  
 
-<p>
-Our attorneys understand that every legal matter represents an important
-moment in a client's life or business. We therefore provide legal advice
-that is strategic, commercially aware and tailored to each client's
-needs.
-</p>
+        <p class="eyebrow">Leadership</p>
 
-<p>
-From corporate transactions and litigation to conveyancing, mining law,
-employment disputes and estate planning, our multidisciplinary team
-delivers solutions that create lasting value.
-</p>
+        <h2>Meet Our Founders.</h2>
 
+    </div>
 
-<div class="pillars">
+    <div class="lead-grid reveal">
 
-<div class="pillar">
-<h4>Our Mission</h4>
+        <!-- Founder 1 -->
 
-<p>
-To deliver exceptional legal services with integrity,
-professionalism and unwavering commitment to every client.
-</p>
+        <div class="lead-card">
 
-</div>
+            <div class="lead-avatar">
+                <img src="Khonzi.png" alt="">
+            </div>
 
-<div class="pillar">
+            <h3>Khonzinkosi (Khonzi) Zondi</h3>
 
-<h4>Our Vision</h4>
+            <span class="lead-role">
+                Managing Director & Attorney
+            </span>
 
-<p>
-To become one of South Africa's most respected and innovative
-legal practices.
-</p>
+            <ul class="lead-creds">
+                <li>BCom Law — IIE Varsity College</li>
+                <li>LLB — University of the Witwatersrand</li>
+            </ul>
 
-</div>
+            <div class="lead-contact">
+                <a href="mailto:khonzi@jandzattorneys.co.za">
+                    khonzi@jandzattorneys.co.za
+                </a>
 
-<div class="pillar">
+                <a href="tel:0720872923">
+                    072 087 2923
+                </a>
+            </div>
 
-<h4>Integrity</h4>
+        </div>
 
-<p>
-Every instruction is handled ethically,
-confidentially and with complete transparency.
-</p>
+        <!-- Founder 2 -->
 
-</div>
+        <div class="lead-card">
 
-<div class="pillar">
+            <div class="lead-avatar">
+                <img src="jonto.png" alt="">
+            </div>
 
-<h4>Excellence</h4>
+            <h3>Sello (Skhalo) Joncto</h3>
 
-<p>
-We pursue the highest standards of legal expertise,
-professionalism and client service.
-</p>
+            <span class="lead-role">
+                Director & Attorney
+            </span>
 
-</div>
-
-</div>
-
-</div>
-
-
-<div class="facade">
-
-<div class="tag">
-Established 2022 • South Africa
-</div>
-
-</div>
-
-</div>
-
-
-<div style="margin-top:120px;" class="reveal">
-
-<div class="section-head">
-
-<p class="eyebrow">
-Leadership
-</p>
-
-<h2>
-Meet Our Founders.
-</h2>
-
-<p>
-J&Z Inc. Attorneys is led by experienced legal professionals whose
-combined expertise continues to shape the firm's strategic direction
-and commitment to excellence.
-</p>
-
-</div>
-
-
-<div class="lead-grid">
-
-<div class="lead-card">
-
-<div class="lead-avatar">
-
-<img src="Khonzi.png" alt="Khonzinkosi Zondi">
-
-</div>
-
-<h3>Khonzinkosi (Khonzi) Zondi</h3>
-
-<span class="lead-role">
-Managing Director & Attorney
-</span>
-
-<ul class="lead-creds">
-
-<li>BCom Law — IIE Varsity College, Sandton</li>
-
-<li>LLB — University of the Witwatersrand</li>
-
-</ul>
-
-<div class="lead-contact">
-
-<a href="mailto:khonzi@jandzattorneys.co.za">
-khonzi@jandzattorneys.co.za
-</a>
-
-<a href="tel:0720872923">
-072 087 2923
-</a>
-
-<a href="tel:0106342556">
-010 634 2556
-</a>
-
-</div>
-
-</div>
-
-
-<div class="lead-card">
-
-<div class="lead-avatar">
-
-<img src="jonto.png" alt="Sello Joncto">
-
-</div>
-
-<h3>Sello (Skhalo) Joncto</h3>
-
-<span class="lead-role">
-Director & Attorney
-</span>
-
-<ul class="lead-creds">
-
-<li>BA General — University of the Witwatersrand</li>
-
-<li>LLB — University of the Witwatersrand</li>
-
-</ul>
-
-<div class="lead-contact">
-
-<a href="mailto:sello@jandzattorneys.co.za">
-sello@jandzattorneys.co.za
-</a>
-
-<a href="tel:0638272192">
-063 827 2192
-</a>
-
-<a href="tel:0106342556">
-010 634 2556
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
+            <ul class="lead-creds">
+                <li>BA General — University of the Witwatersrand</li>
+                <li>LLB — University of the Witwatersrand</li>
+            </ul>
+
+            <div class="lead-contact">
+                <a href="mailto:sello@jandzattorneys.co.za">
+                    sello@jandzattorneys.co.za
+                </a>
+
+                <a href="tel:0638272192">
+                    063 827 2192
+                </a>
+            </div>
 
 </div>
 
@@ -2370,65 +2443,30 @@ If you need legal advice specific to your matter, contact our attorneys for a co
                 </button>
 
                 <div class="contact-note">
-                    🔒 Your enquiry is confidential and will only be reviewed by our legal team.
+                    Your enquiry is confidential and will only be reviewed by our legal team.
                 </div>
 
             </form>
 
         </div>
 
-        <!-- CONTACT INFO -->
-        <div class="contact-info">
 
-            <div class="info-card">
-                <span>📞</span>
-                <h3>Call Us</h3>
-                <a href="tel:0106342556">010 634 2556</a>
-            </div>
+<!-- MAP -->
+<div class="contact-info">
 
-            <div class="info-card">
-                <span>✉</span>
-                <h3>Email</h3>
-                <a href="mailto:info@jandzattorneys.co.za">
-                    info@jandzattorneys.co.za
-                </a>
-            </div>
+    <h3>Find Us</h3>
 
-            <div class="info-card">
-                <span>🕒</span>
-                <h3>Office Hours</h3>
-                <p>
-                    Monday – Friday<br>
-                    08:00 – 17:00
-                </p>
-            </div>
+    <p>
+        Visit our office or schedule a consultation.
+    </p>
 
-            <div class="info-card">
-                <span>📍</span>
-                <h3>Our Offices</h3>
-                <p>
-                    Rosebank<br>
-                    Fochville<br>
-                    Newcastle
-                </p>
-            </div>
-
-            <div class="social-row">
-                <a href="#">LinkedIn</a>
-                <a href="#">Facebook</a>
-                <a href="#">Instagram</a>
-                <a href="#">WhatsApp</a>
-            </div>
-
-            <div class="map-box">
-                <iframe
-                    src="https://www.google.com/maps?q=Rosebank+Johannesburg&output=embed"
-                    loading="lazy">
-                </iframe>
-            </div>
-
-        </div>
-
+    <div class="map-box">
+        <iframe
+            src="https://www.google.com/maps?q=Rosebank,+Johannesburg,+South+Africa&output=embed"
+            loading="lazy"
+            allowfullscreen
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </div>
 
 </div>
